@@ -1,5 +1,5 @@
 {
-    "name": "sdk/middleware",
+    "name": "phpsdk/middleware",
     "description": "Middleware Interface",
     "authors": [
         {
