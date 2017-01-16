@@ -16,7 +16,8 @@
   ],
   "require": {
     "php": "^7.0",
-    "phpsdk/psr-middleware": "@stable"
+    "phpsdk/psr-middleware": "@stable",
+    "phpunit/phpunit": "^5.7"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "2.*"
