@@ -1,10 +1,47 @@
 {
-    "name": "phpsdk/middleware",
-    "description": "Middleware Interface",
-    "authors": [
-        {
-            "name": "Veaceslav Medvedev",
-            "email": "slavcopost@gmail.com"
-        }
-    ]
+  "name": "phpsdk/middleware",
+  "description": "PSR Middleware implementation",
+  "license": "BSD-2-Clause",
+  "keywords": [
+    "http",
+    "middleware",
+    "psr",
+    "psr-15"
+  ],
+  "authors": [
+    {
+      "name": "Veaceslav Medvedev",
+      "email": "slavcopost@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "phpsdk/psr-middleware": "@stable"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*"
+  },
+  "provide": {
+    "psr/http-middleware-implementation": "~1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpSDK\\Http\\Middleware\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PhpSDK\\Http\\Middleware\\": "tests/"
+    }
+  },
+  "scripts": {
+    "check": [
+      "@cs",
+      "@test"
+    ],
+    "cs": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": "phpunit",
+    "test-coverage": "phpunit --coverage-clover build/clover.xml"
+  }
 }
