@@ -16,10 +16,11 @@
   ],
   "require": {
     "php": "^7.0",
-    "phpsdk/psr-middleware": "@stable",
-    "phpunit/phpunit": "^5.7"
+    "phpsdk/psr-middleware": "@stable"
   },
   "require-dev": {
+    "phpunit/phpunit": "^5.7",
+    "scrutinizer/ocular": "~1.1",
     "squizlabs/php_codesniffer": "2.*"
   },
   "provide": {
@@ -43,6 +44,6 @@
     "cs": "phpcs",
     "cs-fix": "phpcbf",
     "test": "phpunit",
-    "test-coverage": "phpunit --coverage-clover build/clover.xml"
+    "test-coverage": "phpunit --coverage-clover build/logs/clover.xml"
   }
 }
