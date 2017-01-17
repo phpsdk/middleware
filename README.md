@@ -49,7 +49,7 @@ The BSD 2-Clause License. Please see [LICENSE][link-license] for more informatio
 [ico-downloads]: https://img.shields.io/packagist/dt/phpsdk/middleware.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/phpsdk/middleware
-[link-license]: LICENSE.md
+[link-license]: LICENSE
 [link-travis]: https://travis-ci.org/phpsdk/middleware
 [link-scrutinizer]: https://scrutinizer-ci.com/g/phpsdk/middleware/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/phpsdk/middleware
