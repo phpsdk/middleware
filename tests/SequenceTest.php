@@ -22,7 +22,7 @@ final class SequenceTest extends TestCase
             $done
         );
 
-        $actual = $sequence->next($this->createServerRequestMock());
+        $actual = $sequence->process($this->createServerRequestMock());
 
         $this->assertSame($initial, $actual);
     }
