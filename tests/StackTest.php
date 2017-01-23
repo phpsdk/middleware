@@ -85,4 +85,34 @@ final class StackTest extends TestCase
         $this->assertCount(count($sequence), $history);
         $this->assertSame($sequence, iterator_to_array($history));
     }
+
+    /**
+     * @test
+     */
+    public function processEmptyStack()
+    {
+        $history = new SplQueue();
+
+        $initial = $this->createResponseMock();
+
+        $stack = new Stack(new NullHttpHandler($initial));
+
+        $actual = $stack->process($this->createRequestMock());
+
+        $this->assertSame($initial, $actual);
+
+        $sequence = [];
+
+        $this->assertCount(count($sequence), $history);
+        $this->assertSame($sequence, iterator_to_array($history));
+
+        $actual = $stack->process($this->createRequestMock());
+
+        $this->assertSame($initial, $actual);
+
+        $sequence = array_merge($sequence, $sequence);
+
+        $this->assertCount(count($sequence), $history);
+        $this->assertSame($sequence, iterator_to_array($history));
+    }
 }

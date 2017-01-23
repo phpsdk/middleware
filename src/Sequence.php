@@ -36,7 +36,7 @@ final class Sequence implements DelegateInterface
         $this->iterator = $stack->getIterator();
         $this->iterator->rewind();
 
-        $this->queue = array_pad([], $stack->count() - 1, $this);
+        $this->queue = array_pad([], $stack->count(), $this);
         array_unshift($this->queue, $final);
     }
 
@@ -49,6 +49,16 @@ final class Sequence implements DelegateInterface
         $frame = $this->getNextFrame();
 
         return $middleware->process($request, $frame);
+    }
+
+    /**
+     * @param RequestInterface $request
+     *
+     * @return ResponseInterface
+     */
+    public function process(RequestInterface $request): ResponseInterface
+    {
+        return array_pop($this->queue)->next($request);
     }
 
     /**

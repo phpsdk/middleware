@@ -106,6 +106,6 @@ final class Stack implements StackInterface, IteratorAggregate, Countable
     {
         $sequence = new Sequence($this, $this->done);
 
-        return $sequence->next($request);
+        return $sequence->process($request);
     }
 }
